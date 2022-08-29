@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  CollectionViewCell.swift // название опять не говорит ничего
 //  Dogs
 //
 //  Created by Прохоренко Георгий Денисович on 24.08.2022.

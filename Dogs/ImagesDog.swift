@@ -1,5 +1,5 @@
 //
-//  ImagesDog.swift
+//  ImagesDog.swift // названия файлов должны соответсвовать объектам в них
 //  Dogs
 //
 //  Created by Прохоренко Георгий Денисович on 18.08.2022.
@@ -7,10 +7,14 @@
 
 import UIKit
 
+// Использовать final class
+// UICollectionViewDataSource UICollectionViewDelegate, UICollectionViewDelegateFlowLayout в отдельных extension должны быть
+// Принты убрать по проекту 
 class ImagesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
+	// если из внешних объектов эти свойства не нужны, то нужно их делать приватными
     var api: String!
-    var indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    var indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40)) // значения в константы
     let cv:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
     var imagesURLList: [String] = []
@@ -64,6 +68,8 @@ class ImagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
 
+	// странный метод, если я его вызову дважды то он повторно настроится и разместится, если ты хочешь сделать метод в
+	// котором настраиваешь индикатор, назови его  setupActivityIndicator и убери indicator.startAnimating()
     func activityIndicator() {
         print("act")
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
