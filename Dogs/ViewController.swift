@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 65
-        Dogs.getDogsList {
+        Dogs.getDogsList { // вся логика похода в сеть тут и в ImagesViewController должна быть вынесена в отдельный сервис и быть покрыта тестами
             list in
             var dog: [Dogs] = []
             for (name, subname) in list{

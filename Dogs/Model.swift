@@ -22,7 +22,7 @@ struct Dogs {
     let name: String
     let image: String
 }
-
+// логики в структурах не должно быть это надо делать через сервисы
 extension Dogs {
     
     static func image(urlImage: String, list: @escaping([String]) -> ()) {
